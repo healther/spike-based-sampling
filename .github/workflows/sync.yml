@@ -1,0 +1,21 @@
+name: CI
+
+on:
+  schedule:
+    - cron: "%5 * * * 1-5"
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run a one-line script
+      run: echo Hello, world!
+    - name: Run a multi-line script
+      run: |
+        git remote add vision git@github.com:electronicvisions/spike-based-sampling.git
+        git pull vision
+        git rebase vision/master
+        git push origin
