@@ -1,6 +1,7 @@
 name: Python application
 
-on: [push]
+on:
+  release:    
 
 jobs:
   build:
