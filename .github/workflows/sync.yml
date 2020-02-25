@@ -1,8 +1,9 @@
 name: CI
 
 on:
-  schedule:
-    - cron: "* * * * 1-5"
+  push:
+    branches: 
+      - master
 
 jobs:
   build:
